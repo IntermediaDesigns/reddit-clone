@@ -4,7 +4,45 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url  	    = env("DATABASE_URL")
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
+model User {
+  id         String      @id @default(uuid())
+  username   String      @unique
+  password   String
+  posts      Post[]
+  votes      Vote[]
+  subreddits Subreddit[]
+}
+
+model Subreddit {
+  id     String @id @default(uuid())
+  name   String @unique
+  userId String
+  posts  Post[]
+  user   User   @relation(fields: [userId], references: [id])
+}
+
+model Post {
+  id          String    @id @default(uuid())
+  title       String
+  message     String
+  userId      String
+  subredditId String
+  parentId    String? // This field is optional as it can be null
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  subreddit   Subreddit @relation(fields: [subredditId], references: [id], onDelete: Cascade)
+  votes       Vote[]
+}
+
+model Vote {
+  id     String @id @default(uuid())
+  userId String
+  postId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  posts  Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, postId])
+}

@@ -28,7 +28,7 @@ export default function Navbar() {
           Subreddits
         </Link>
         <Link className={styles.link} href={'/navigation/logout'}>
-          <Logout/>
+          <Logout />
         </Link>
         
         

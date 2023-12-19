@@ -1,22 +1,52 @@
-.navContainer{
+.navContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #1a1a1a;
-  height: 60px;
+  height: 65px;
   position: sticky;
   top: 0px;
 }
 
-.logo {
+.logoContainer {
+  background-color: #1a1a1a;
   margin-left: 2rem;
-  background-color: transparent;
+}
+.logo {
+  width: 60px;
+  height: 55px;
+  background-color: #1a1a1a;
 }
 
 .navBar {
-       display: flex;
-       gap: 20px;
-       color: white;
-       margin-right: 2rem;
-       background-color: transparent;
-     }
+  display: flex;
+  gap: 20px;
+  background-color: #1a1a1a;
+}
+
+.logoLink {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  background-color: #1a1a1a;
+}
+.link {
+  color: #d7dadc;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  background-color: #1a1a1a;
+}
+
+.navBtnContainer {
+  margin-right: 2rem;
+  display: flex;
+  gap: 20px;
+  background-color: #1a1a1a;
+}
+
+.navBtn{
+  width: 80px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: lightblue;
+  border: 2px inset red;
+}

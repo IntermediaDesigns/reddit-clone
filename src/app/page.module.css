@@ -253,13 +253,25 @@ form.form1 {
   flex-direction: column;
   height: auto;
   width: 30px;
-  padding: 5px;
+  padding: 10px 5px;
   color: rgb(27, 26, 26);
   text-align: center;
   font-weight: 700;
   font-family: 'Mina', sans-serif;
-  margin-top: 5px;
   background-color: rgb(241, 250, 250);
+}
+
+.clickVote {
+  display: flex;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  
+}
+
+.clickVote:hover {
+  transform: scale(1.1);
 }
 .commentsBtnContainer{
   display: flex;

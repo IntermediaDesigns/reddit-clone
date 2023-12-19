@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import styles from '../page.module.css';
-import Comments from './GetComments.jsx';
+
 import { useRouter } from 'next/navigation.js';
 
 export default function Posts({ post }) {
@@ -72,5 +72,11 @@ export default function Posts({ post }) {
               setIsEditing(false);
               setErrorMessage('');
        };
+
+       return (
+              <div>
+                     
+              </div>
+       )
 
 }

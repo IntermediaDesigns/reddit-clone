@@ -1,10 +1,29 @@
-import './globals.css'
+import styles from '@/app/page.module.css';
+import './globals.css';
 
 export default function Home() {
-  
+  return (
+    <div className={styles.mainContainer}>
+      <div className={styles.createPostContainer}>
+        <div className={styles.profileContainer}>👤</div>
+        <div className={styles.CreatePostInputContainer}>
+          <input
+            className={styles.createPostInput}
+            type='text'
+            placeholder='Create Post'
+          />
+        </div>
+      </div>
 
-  return 
-    
-   
-  
+      <div className={styles.postsContainer}>
+        <div className={styles.postsVoteContainer}>⬆️ # ⬇️</div>
+        <div>Posts</div>
+        <div className={styles.commentsBtnContainer}>
+          <button className={styles.commentsBtn}>💬 # Comments</button>
+        </div>
+      
+      </div>
+
+    </div>
+  );
 }

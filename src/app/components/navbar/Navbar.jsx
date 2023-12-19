@@ -14,9 +14,13 @@ export default function Navbar() {
       </div>
 
       <div className={styles.navBar}>
+
+        <div className={styles.homeContainer}>
         <Link className={styles.link} href={'/'}>
-          Home
+        <img className={styles.home} src='/home.png' alt='home' />
         </Link>
+        </div>
+
         <Link className={styles.link} href={'/navigation/subreddits'}>
           Subreddits
         </Link>

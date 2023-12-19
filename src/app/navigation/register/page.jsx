@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import styles from '@/app/page.module.css';
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -11,21 +12,23 @@ export default function Register() {
   }
 
   return (
-    <div>
-      <form onSubmit={handleRegister}>
+    <div className={styles.main}>
+      <p className={styles.sign} align='center'>
+        Register
+      </p>
+      <form className={styles.form1}>
+        <input className={styles.username} type='text' placeholder='Username' />
         <input
-          onChange={(e) => setUsername(e.target.value)}
-          value={username}
-          placeholder="Username.."
+          className={styles.password}
+          type='password'
+          placeholder='Password'
         />
-        <input
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          placeholder="password.."
-          type="password"
-        />
-        <button>Register</button>
+        <a className={styles.submit} align='center'>
+          Register
+        </a>
+        <p className={styles.formText}>Already registered? <a href="/navigation/login">Login Here</a></p>
       </form>
+      
     </div>
   );
 }

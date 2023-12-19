@@ -1,5 +1,16 @@
 * {
-       margin: 0;
-       padding: 0;
-       background-color: #030303;
+  margin: 0;
+  padding: 0;
+}
+
+/* light.css */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* dark.css */
+body {
+  background-color: black;
+  color: white;
 }

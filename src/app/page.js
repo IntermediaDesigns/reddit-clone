@@ -21,7 +21,7 @@ export default function Home() {
           <button className={styles.clickVote}>⬆️</button> # <button className={styles.clickVote}>⬇️</button>
           </div>
 
-        <div>Posts</div>
+        
 
         <div className={styles.commentsBtnContainer}>
           <button className={styles.commentsBtn}>💬 # Comments</button>

@@ -2,16 +2,9 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  
 }
 
-/* light.css */
 body {
-  background-color: white;
-  color: black;
-}
-
-/* dark.css */
-body {
-  background-color: black;
-  color: white;
+  background-color: #58c7fd
 }

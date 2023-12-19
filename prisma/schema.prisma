@@ -12,37 +12,38 @@ model User {
   id         String      @id @default(uuid())
   username   String      @unique
   password   String
+  subreddits Subreddit[]
   posts      Post[]
   votes      Vote[]
-  subreddits Subreddit[]
-}
-
-model Subreddit {
-  id     String @id @default(uuid())
-  name   String @unique
-  userId String
-  posts  Post[]
-  user   User   @relation(fields: [userId], references: [id])
 }
 
 model Post {
   id          String    @id @default(uuid())
   title       String
   message     String
+  subreddit   Subreddit @relation(fields: [subredditId], references: [id])
+  user        User      @relation(fields: [userId], references: [id])
   userId      String
   subredditId String
-  parentId    String? // This field is optional as it can be null
-  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  subreddit   Subreddit @relation(fields: [subredditId], references: [id], onDelete: Cascade)
   votes       Vote[]
+  parent      Post?     @relation("post", fields: [parentId], references: [id])
+  children    Post[]    @relation("post")
+  parentId    String?
+}
+
+model Subreddit {
+  id     String @id @default(uuid())
+  name   String @unique
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+  posts  Post[]
 }
 
 model Vote {
-  id     String @id @default(uuid())
-  userId String
-  postId String
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
-  posts  Post   @relation(fields: [postId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, postId])
+  id       String  @id @default(uuid())
+  user     User    @relation(fields: [userId], references: [id])
+  userId   String
+  post     Post    @relation(fields: [postId], references: [id])
+  postId   String
+  isUpvote Boolean
 }

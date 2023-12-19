@@ -3,6 +3,7 @@ import styles from '@/app/page.module.css';
 import Logout from '@/app/navigation/logout/page.jsx';
 
 
+
 export default function Navbar() {
 
   
@@ -26,9 +27,10 @@ export default function Navbar() {
         <Link className={styles.link} href={'/navigation/subreddits'}>
           Subreddits
         </Link>
-        <Link className={styles.link} href={<Logout/>}>
-          Logout
+        <Link className={styles.link} href={'/navigation/logout'}>
+          <Logout/>
         </Link>
+        
         
       </div>
 

@@ -19,6 +19,6 @@
     "react-switch": "^7.0.0"
   },
   "devDependencies": {
-    "prisma": "^5.7.0"
+    "prisma": "^5.7.1"
   }
 }

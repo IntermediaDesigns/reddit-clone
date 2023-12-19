@@ -1,4 +1,22 @@
-.navbar {
+.navContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1a1a1a;
+  height: 60px;
+  position: sticky;
+  top: 0px;
+}
+
+.logo {
+  margin-left: 2rem;
+  background-color: transparent;
+}
+
+.navBar {
        display: flex;
-       gap: 10px;
+       gap: 20px;
+       color: white;
+       margin-right: 2rem;
+       background-color: transparent;
      }
